@@ -1,8 +1,9 @@
 # Demo python project
 
 ## Notes
+https://flask.palletsprojects.com/en/1.1.x/quickstart/#a-minimal-application
 
-https://codelabs.developers.google.com/codelabs/cloud-run-hello-python3
+https://codelabs.developers.dockerrgoogle.com/codelabs/cloud-run-hello-python3
 
 ``` bash
 gcloud services enable cloudbuild.googleapis.com run.googleapis.com

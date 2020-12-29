@@ -19,6 +19,16 @@ def ping():
 @app.route('/test2')
 def test():
     response = make_response('{"msg": "passed"}')
+
+@app.route('/tasks')
+def tasks():
+    response = make_response('[]')
+    response.mimetype = 'application/json'
+    return response
+
+@app.route('/tasks/<taskId>')
+def tasksById(taskId):
+    response = make_response('{"id": ' + taskId + '}')
     response.mimetype = 'application/json'
     return response
 
