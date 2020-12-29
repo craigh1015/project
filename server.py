@@ -16,7 +16,7 @@ def ping():
     response.mimetype = 'application/json'
     return response
 
-@app.route('/test')
+@app.route('/test2')
 def test():
     response = make_response('{"msg": "passed"}')
     response.mimetype = 'application/json'
