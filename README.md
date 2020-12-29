@@ -17,3 +17,5 @@ echo $DOCKER_IMG
 
 gcloud builds submit --tag $DOCKER_IMG
 ```
+
+Alex was here
