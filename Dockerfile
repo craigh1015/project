@@ -11,6 +11,8 @@ RUN pip install -r requirements.txt
 # Bundle app source
 COPY server.py /app
 
-EXPOSE 5000
+EXPOSE 8080
 
-CMD [ "python", "server.py" ]
+ENV PORT 8080
+
+CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 server:app
