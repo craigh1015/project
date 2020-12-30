@@ -1,7 +1,7 @@
 import pytest
 import json
 
-from server import app
+from app import app
 
 def test_tasks():
     client = app.test_client()
