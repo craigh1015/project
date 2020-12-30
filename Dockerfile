@@ -10,6 +10,7 @@ RUN pip install -r requirements.txt
 
 # Bundle app source
 COPY app.py /app
+COPY static/* /app/static/
 
 EXPOSE 8080
 

@@ -1,8 +1,13 @@
-from flask import Flask, jsonify, request, redirect, url_for
+from flask import Flask, jsonify, request, redirect
 from flask.helpers import make_response
 
 app = Flask(__name__)
 list_of_tasks = {}
+
+@app.route('/')
+@app.route('/index.html')
+def home():
+    return redirect('static/index.html')
 
 @app.route('/tasks', methods = ['POST', 'GET'])
 def tasks():
