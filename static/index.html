@@ -5,17 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 
 <body>
-    <div id="app">
-        <ul>
+
+    <div class="container" id="app">
+        <nav>
+            <div class="nav-wrapper blue">
+                <a href="#" class="brand-logo center">Tasks</a>
+            </div>
+        </nav>
+
+        <ul class="collapsible">
             <task-detail v-for="task in tasks" v-bind:task="task" v-bind:key="task.id"></task-detail>
         </ul>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="/static/app.js"></script>
+
+    <!-- <script src="/static/app.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems);
+        });
+    </script>
+
+    <script>
+        const appConfig = {
+            data() {
+                return {
+                    tasks: [
+                        { id: 0, text: 'Learn JavaScript' },
+                        { id: 1, text: 'Learn Vue' },
+                        { id: 2, text: 'Build something awesome' }
+                    ]
+                }
+            },
+            async created_() {
+                response = await fetch("/tasks")
+                this.tasks = await response.json()
+            }
+        }
+
+        const app = Vue.createApp(appConfig)
+
+        app.component('task-detail', {
+            props: ['task'],
+            template: `<li><div class="collapsible-header"><i class="material-icons">assignment</i>{{ task.text }}</div><div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div></li>`
+        })
+
+        app.mount('#app')
+    </script>
 </body>
 
 </html>
