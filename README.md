@@ -18,4 +18,6 @@ echo $DOCKER_IMG
 gcloud builds submit --tag $DOCKER_IMG
 ```
 
-Alex was here
+## GCLOUD emulator
+
+gcloud beta emulators firestore start --host-port "localhost:8001"
