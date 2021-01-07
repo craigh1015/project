@@ -5,7 +5,7 @@
 Users (Players, Admin)
     Player (Idle, Looking, Reserved, Playing, Running Game)
 Locations (Open, Reserved)
-OpenGames (Open, Running, Complete, Abandoned:flag)
+Games (Open, Running, Complete, Abandoned:flag)
 
 ## Actions
 
@@ -28,7 +28,7 @@ User:Player(Own Game) -> Start game early
 User:Player(Own Game) -> Abandon game (notify Players with reservations)
 User:Player(Own Game) -> End game (free location)
 
-User:Player -> List OpenGames()
+User:Player -> List Games()
 User:Player -> Reserve Slot(Open game) : no overlap
 User:Player -> Register Looking
 
