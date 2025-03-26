@@ -1,5 +1,22 @@
 # Demo python project
 
+## Sample diagram
+```plantuml
+@startuml
+allowmixing
+
+actor     Actor
+usecase   Usecase
+
+json JSON {
+   "fruit":"Apple",
+   "size":"Large",
+   "color": ["Red", "Green"]
+}
+@enduml
+```
+
+
 ## Notes
 https://flask.palletsprojects.com/en/1.1.x/quickstart/#a-minimal-application
 
